@@ -15,7 +15,7 @@ def states_1(id=None):
     if id is given, list the cities of that State
     else, list all States
     """
-    states = storage.all('State')
+    states = storage.all(State)
     if id:
         key = '{}.{}'.format('State', id)
         if key in states:
@@ -23,7 +23,7 @@ def states_1(id=None):
         else:
             states = None
     else:
-        states = storage.all('State').values()
+        states = storage.all(State).values()
     return render_template('9-states.html', states=states, id=id)
 
 
